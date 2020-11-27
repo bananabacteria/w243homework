@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<script>
+	// 水仙花
+	var e = 0,f = '';
+	for (var a = 100; a <= 999; a++){
+		var b = parseInt(a/100),c = parseInt(a%100/10),d = a%10;
+		if (a == b*b*b + c*c*c + d*d*d) {
+			f = f + a + ' ';
+			e++;
+		}
+	}
+	console.log('水仙花个数是' + e);
+	console.log('这些水仙花分别是' + f);
+
+	// 猴子吃桃
+	for (var a = 9,b = 1; a >= 1; a--) {
+		b = (b + 1) * 2;
+	}
+	console.log('一开始的桃子数量是' + b);
+
+	// 分数序列
+	for (var a = 2,b = 1, c = 1,d,e = 0; c <= 20; c++) {
+		d = a/b;
+		e = e + d;
+		a = a + b;
+		b = d * b;
+	}
+	console.log('前二十项数列之和为' + e);
+
+	// 等腰三角形
+	for (var a = 1; a < 20; a++) {
+		for (var b = 1; b < 20 - a; b++) {
+			document.write('<span style="color: white;">*</span>');
+		}
+		for (var c = 1; c <= 2 * (20 - b) - 1; c++) {
+			document.write('<span>*</span>');
+		}
+		document.write('</br>');
+	}
+
+	// 饭钱
+	for (var m = 1; m <= 28; m++) {
+		for (var f = 1; f <= 28; f++) {
+			var c = 30 - m - f;
+			if (500 == 30 * m + 20 * f + 10 * c) {
+				console.log('男人有'+ m +'人，女人有'+ f +'人，小孩有'+c+'人');
+			}
+		}
+	}
+
+	// 闰年问题
+	var y = '';
+	for (var year = 2000; year <= 3000; year++) {
+		if (year%400 == 0 || year%4 == 0 && year%100 != 0) {
+			y = y + year +',';
+		}
+	}
+	console.log('闰年有' + y);
+
+	// 隔三差五
+	for (var i = 1,num = ''; i <= 100; i++) {
+		if (i%3 == 0 && i%5 == 0) {
+			num = num + '三五，';
+		}else {
+			if (i%3 == 0) {
+				num = num + '三，';
+			}else if (i%5 ==0) {
+				num = num + '五，';
+			}else {
+				num = num + i + ',';
+			}
+		}
+	}
+	console.log(num);
+</script>
+</body>
+</html>

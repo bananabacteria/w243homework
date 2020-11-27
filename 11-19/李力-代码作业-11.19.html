@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    var a = 10;
+    var b = 3;
+    console.log(parseInt(a/b));
+    console.log('' + a%b);
+    console.log(typeof(''+ a%b));
+
+    var times = prompt('请输入秒数');
+    alert(parseInt(times/3600) + '小时' + parseInt((times%3600)/60) + '分' + parseInt(times%60) + '秒');
+
+    var x = prompt('语文成绩');
+    var y = prompt('数学成绩');
+    alert(x == 100 && y == 100 ? '周末去游乐园' : '在家改错题');
+
+    var pointZh = prompt('新一年的语文成绩');
+    var pointMath = prompt('新一年的数学成绩');
+    var rank = prompt('奥数排名');
+    alert((pointZh == 100 && pointMath == 100) && rank <= 90 ? '去迪斯尼high' : '明年再努力吧');
+    
+    if (x == 100 && y == 100) {
+      console.log('周末去游乐园')
+    }else{
+      console.log('在家改错题')
+    }
+  </script>
+</body>
+</html>

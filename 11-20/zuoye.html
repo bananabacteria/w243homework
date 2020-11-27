@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<script>
+	// 模拟自动饮料机
+	var x = +prompt('请输入0-5的整数');
+	switch (x) {
+		case 0:
+			alert('停止运行')
+			break;
+		case 1:
+			alert('可口可乐');
+			break;
+		case 2:
+			alert('雪碧');
+			break;
+		case 3:
+			alert('鲜橙多');
+			break;
+		case 4:
+			alert('冰红茶');
+			break;
+		case 5:
+			alert('矿泉水');
+			break;
+		default:
+			alert('非法操作，请重新输入');
+	}
+
+// 水仙花数
+	var num = prompt('请输入水仙花数(不超过三位数)');
+	if (num == parseInt(num) && num < 1000) {
+		var a = parseInt(num/100);
+		var b = parseInt(num%100/10);
+		var c = parseInt(num%100%10);
+		alert(num == a*a*a + b*b*b + c*c*c ? '这是水仙花数' : '这不是水仙花数');
+	}else {
+		alert('请输入正确的花数');
+	}
+
+	// 判断三角形
+	var max = prompt('请输入三角形的长边');
+	var mid = prompt('请输入三角形的中边');
+	var min = prompt('请输入三角形的短边');
+	if (NaN != +max && NaN != +mid && NaN != +min && max >= mid && mid >= min && min > 0) {
+		var max = +max;
+		var mid = +mid;
+		var min = +min;
+		if (max + mid > min && max + min > mid && mid + min >max) {
+			if (mid * mid + min * min == max * max) {
+				if (min == mid) {
+					alert('这是个等腰直角三角形');
+				}else {
+					alert('这是个直角三角形');
+				}
+			}else if (mid * mid + min * min < max * max) {
+				if (mid == min) {
+					alert('这是个等腰钝角三角形');
+				}else {
+					alert('这是个钝角三角形');
+				}
+			}else {
+				if (max == mid && max == min) {
+					alert('这是个等边三角形');
+				}else if (mid == min) {
+					alert('这是个等腰锐角三角形');
+				}else {
+					alert('这是个锐角三角形');
+				}
+			}
+		}else {
+			alert('这不是三角形');
+		}
+	}else {
+		alert('请输入正确的数据');
+	}
+
+	// 计算日期
+	var year = prompt('请输入当前的年份');
+	var month = prompt('请输入当前是几月');
+	var day = +prompt('请输入当前是几号');
+	if (year == parseInt(year) && month == parseInt(month) && day == parseInt(day) && 0 < month && month < 13 && 0 < day && day <= 31 && 0 < year) {
+		var y = 0,z;
+		switch (month - 1) {
+			case 11:
+				y += 30;
+			case 10:
+				y += 31;
+			case 9:
+				y += 30;
+			case 8:
+				y += 31;
+			case 7:
+				y += 31;
+			case 6:
+				y += 30;
+			case 5:
+				y += 31;
+			case 4:
+				y += 30;
+			case 3:
+				y += 31;
+			case 2:
+				year%4 == 0 && year%100 != 0 || year%400 == 0 ? y += 29 : y += 28;
+			case 1:
+				y += 31;
+			break;
+		}
+		z = y + day;
+		alert('这是这一年的第' + z + '天')
+	}else {
+		alert('请输入正确的年月日')
+	}
+</script>
+</body>
+</html>

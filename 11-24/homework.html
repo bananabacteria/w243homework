@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<script>
+	//猜数字
+	let a,b = Math.floor(Math.random() * (100 + 1)), c = 1;
+	do {
+		a = +prompt('请输入一个0～100的数字');
+		if (a === b) {
+			alert('聪明');
+			break;
+		}else if (a < b) {
+			alert('小了');
+		}else {
+			alert('大了');
+		}
+		c++;
+	}while (c <= 5);
+
+	// 猜数组
+	let a = [], b = [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)], c = 1, d, e, m, n;
+	do {
+		// 重置判定条件
+		a = [], d = 0, e = 0;
+		// 获取用户输入的值
+		for (n = 1; n <= b.length; n++) {
+			m = +prompt('请输入第' + n + '个0～9的数字');
+			a.push(m);
+		}
+		// 进行比较验证
+		for (let i = 0; i <= b.length - 1; i++) {
+			if(a[i] === b[i]) d++;
+			else e++;
+		}
+		alert('正确' + d + '个，错误' + e + '个，猜了' + c + '次');
+		// 全部正确终止循环
+		if(d === b.length) break;
+		c++;
+	} while (c <= 100);
+
+	// 双色球
+	let a = [], b;
+	a.push(Math.ceil(Math.random() * 33));
+	for (let i = 1; i <= 5; i++) {
+		b = Math.ceil(Math.random() * 33);
+		if (a.indexOf(b) < 0) {
+			a.push(b);
+		}else {
+			i--;
+		}
+	}
+	a.push('' + Math.ceil(Math.random() * 16))
+	console.log(a);
+
+</script>
+</body>
+</html>

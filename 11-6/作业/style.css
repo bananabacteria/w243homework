@@ -1,0 +1,37 @@
+* {
+    background-color: black;
+    color: white;
+}
+
+.rightimg  {
+    float: right;
+    border: white dashed 1px;
+    margin: 10px;
+}
+.textarea {
+    padding: 10px;
+}
+#very {
+    font-size: 4em;
+    float: left;
+}
+
+.lefttext {
+    text-align: left;
+    text-decoration: underline;
+    font-weight: 800;
+    margin: 10px;
+}
+
+.leftimg {
+    float: left;
+    border: white dashed 1px;
+    margin: 10px;
+}
+
+.righttext {
+    text-align: right;
+    text-decoration: underline;
+    font-weight: 800;
+    margin: 10px;
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form action="">
+        <!--&lt;!&ndash;输入区域&ndash;&gt;
+        <div>
+            &lt;!&ndash;左边区域&ndash;&gt;
+            <div style="float: left;margin-left: 300px;">
+                <div>
+                    <label for="firstname">*姓氏:</label>
+                    <input type="text" id="firstname" required name="firstname"/>
+                </div>
+                <div>
+                    <label for="lastname">*名字:</label>
+                    <input type="text" id="lastname" required name="lastname"/>
+                </div>
+                <div>
+                    <label for="mail">*电子邮箱:</label>
+                    <input type="email" id="mail" required name="mail"/>
+                </div>
+                <div>
+                    <label for="password">*密码:</label>
+                    <input type="password" id="password" required name="password"/>
+                </div>
+                <div>
+                    <label for="checkpw">*确认密码:</label>
+                    <input type="password" id="checkpw" required name="password"/>
+                </div>
+                    <label for="tel">*手机号码:</label>
+                    <input type="tel" id="tel" required name="tel"/>
+                <div>
+                    <label for="validate">*验证码:</label>
+                    <input type="text" id="validate" required name="validate"/>
+                </div>
+            </div>
+            &lt;!&ndash;右边区域&ndash;&gt;
+            <div style="float: right;margin-right: 300px">
+                <div>
+                    <label for="user">*用户名：</label>
+                    <input type="text" id="user" required name="user"/>
+                </div>
+                <div>
+                    <label for="birthday">*出生日期：</label>
+                    <input type="date" id="birthday" required name="birthday" />
+                </div>
+                <div>
+                    <label for="sex">*性别：</label>
+                    <select name="sex" id="sex" required>
+                        <option value="1" selected>男</option>
+                        <option value="0">女</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="mailnumber">邮政编号：</label>
+                    <input type="text" id="mailnumber"  name="mailnumber"/>
+                </div>
+                <div>
+                    <label for="address">常用住址：</label>
+                    <input type="text" id="address"  name="address"/>
+                </div>
+                <div>
+                    <input type="checkbox" id="magazine" name="subscription"/>
+                    <label for="magazine">
+                        <small>订阅杂志获取LXF最新商品资讯、特别优惠及服务</small>
+                    </label>
+                </div>
+                <div>
+                    <input type="checkbox" id="message" name="subscription"/>
+                    <label for="message">
+                        <small>订阅短信与邮件获取最新商品资讯及特别优惠</small>
+                    </label>
+                </div>
+            </div>
+        </div>
+        &lt;!&ndash;提交区域&ndash;&gt;
+        <div style="padding: 200px 300px 0 300px">
+            <div>
+                <small>*为必填项</small>
+            </div>
+            <hr/>
+            <div>
+                <small>确认注册后，需遵循LXF政策及条款声明。</small>
+            </div>
+            <div>
+                <input type="submit" value="确认注册"/>
+            </div>
+        </div>-->
+        <table cellspacing="0">
+            <tr>
+                <td align="right">
+                    <label for="firstname">*姓氏:</label>
+                </td>
+                <td>
+                    <input type="text" id="firstname" required name="firstname"/>
+                </td>
+                <td align="right">
+                    <label for="user">*用户名：</label>
+                </td>
+                <td>
+                    <input type="text" id="user" required name="user"/>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <label for="lastname">*名字:</label>
+                </td>
+                <td>
+                    <input type="text" id="lastname" required name="lastname"/>
+                </td>
+                <td align="right">
+                    <label for="birthday">*出生日期：</label>
+                </td>
+                <td>
+                    <input type="date" id="birthday" required name="birthday" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <label for="mail">*电子邮箱:</label>
+                </td>
+                <td>
+                    <input type="email" id="mail" required name="mail"/>
+                </td>
+                <td align="right">
+                    <label for="sex">*性别：</label>
+                </td>
+                <td>
+                    <select name="sex" id="sex" required>
+                        <option value="1" selected>男</option>
+                        <option value="0">女</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <label for="password">*密码:</label>
+                </td>
+                <td>
+                    <input type="password" id="password" required name="password"/>
+                </td>
+                <td align="right">
+                    <label for="mailnumber">邮政编号：</label>
+                </td>
+                <td>
+                    <input type="text" id="mailnumber"  name="mailnumber"/>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <label for="checkpw">*确认密码:</label>
+                </td>
+                <td>
+                    <input type="password" id="checkpw" required name="password"/>
+                </td>
+                <td align="right">
+                    <label for="address">常用住址：</label>
+                </td>
+                <td>
+                    <input type="text" id="address"  name="address"/>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <label for="tel">*手机号码:</label>
+                </td>
+                <td>
+                    <input type="tel" id="tel" required name="tel"/>
+                </td>
+                <td colspan="2">
+                    <input type="checkbox" id="magazine" name="subscription"/>
+                    <label for="magazine">
+                        <small>订阅杂志获取LXF最新商品资讯、特别优惠及服务</small>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <label for="validate">*验证码:</label>
+                </td>
+                <td>
+                    <input type="text" id="validate" required name="validate"/>
+                </td>
+                <td colspan="2">
+                    <input type="checkbox" id="message" name="subscription"/>
+                    <label for="message">
+                        <small>订阅短信与邮件获取最新商品资讯及特别优惠</small>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <small>*为必填项</small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <hr/>
+                    <small>确认注册后，需遵循LXF政策及条款声明。</small>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" align="right">
+                    <input type="submit" value="确认注册"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

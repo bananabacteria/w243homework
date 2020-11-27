@@ -1,0 +1,118 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  list-style: none;
+}
+
+header {
+  background-color: rgb(0, 65, 101);
+  line-height: 50px;
+  height: 50px;
+}
+
+.header {
+  float: left;
+  color: rgb(240, 240, 240);
+  margin-left: 140px;
+}
+
+#underline {
+  border-bottom: 3px solid rgb(255, 194, 14);
+  height: 47px;
+}
+
+#more {
+  font-size: small;
+  color: rgb(165, 165, 165);
+  float: right;
+  margin-right: 70px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(95, 194, 240);
+}
+
+#main {
+  background-image: url(./澳大利亚img/banner.jpg);
+  height: 640px;
+  text-align: center;
+}
+
+#navBar {
+  background-color: rgb(0, 160, 175);
+  height: 80px;
+}
+
+#navBar > ul {
+  overflow: hidden;
+}
+
+#nav > li {
+  float: left;
+  margin-left: 140px;
+  line-height: 80px;
+  color: rgb(236, 249, 241)
+}
+
+#nav img {
+  vertical-align: middle;
+}
+
+#icon li {
+  float: right;
+  line-height: 80px;
+  margin-right: 70px;
+}
+
+#welcome {
+  margin: 200px 0 200px;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 300;
+  color: white;
+}
+
+#plan {
+  color: white;
+  margin-bottom: 20px;
+}
+
+#click {
+  color: white;
+  width: 270px;
+  height: 50px;
+  margin: auto;
+  line-height: 50px;
+  background-color: rgb(122, 161, 178);
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: 300;
+  color: rgb(141, 137, 111);
+  text-align: center;
+  margin-top: 60px;
+}
+
+#find {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+#exhibition {
+  width: 1300px;
+  margin: auto;
+}
+
+#exhibition > li {
+  float: left;
+  padding: 5px;
+}
+
+#taller {
+  height: 360px;
+}
