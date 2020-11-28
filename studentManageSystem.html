@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+
+  var information = [ // 学生基础信息数组
+    {
+      stuId: '007',
+      name: 'James Bond',
+      sex: '爷们',
+      age: '壮年',
+      class: '特工组'
+    },
+    {
+      stuId: '2077',
+      name: '波兰蠢驴',
+      sex: '半机械人',
+      age: '18',
+      class: '夜之城'
+    }
+  ];
+
+  // 主菜单界面
+  function menu() {
+    var select = +prompt('请进行操作选择：\n1.查询学生\n2.增加学生\n3.删除学生\n4.修理学生\n5.退出系统');
+    switch (select) {
+      case 1:
+        search();
+        break;
+      case 2:
+        add();
+        break;
+      case 3:
+        del();
+        break;
+      case 4:
+        change();
+        break
+      case 5:
+        break;
+      default:
+        alert('输入错误，请重新输入');
+        menu();
+    }
+  }
+
+  // 查找学生信息
+  function search() {
+    var stuId = prompt('请输入需要查询的学号');
+    var res = false;
+    for (var i = 0; i < information.length; i++) {
+      if (information[i].stuId === stuId) {
+        alert('所查询的学生信息为：\n'+'学号:'+ information[i].stuId +'\n姓名:'+ information[i].name +'\n性别:'+information[i].sex+'\n年龄:'+information[i].age+'\n班级:'+information[i].class);
+        res = true;
+      }
+    }
+    if (!res) alert('查无此人！');
+    menu();
+  }
+
+  // 添加学生
+  function add() {
+    var obj = {};
+    obj.stuId = prompt('请输入学号');
+    obj.name = prompt('请输入姓名');
+    obj.sex = prompt('请输入性别');
+    obj.age = prompt('请输入年龄');
+    obj.class = prompt('请输入班级');
+    var newLength = information.push(obj);
+    if (information.length === newLength) alert('添加成功');
+    else alert('添加失败');
+    menu();
+  }
+
+  // 删除学生
+  function del() {
+    var delId = prompt('请输入需要删除的学生学号');
+    var res = false;
+    for (var i = 0; i < information.length; i++) {
+      if (delId === information[i].stuId) {
+        var confirm =  +prompt('选中的学生信息为：\n'+'学号:'+ information[i].stuId +'\n姓名:'+ information[i].name +'\n性别:'+information[i].sex+'\n年龄:'+information[i].age+'\n班级:'+information[i].class + '\n确认删除请输入1，返回主菜单请输入0');
+        switch (confirm) {
+          case 1:
+            if (delId === information.splice(i,1)[0].stuId) {
+              alert('学生信息删除成功，即将返回主界面');
+              menu();
+            }else {
+              alert('删除失败，请重新操作');
+              del();
+            }
+            break;
+          case 0:
+            menu();
+            break;
+          default:
+            alert('输入信息有误，请重新输入');
+            del();
+            break;
+        }
+        res = true;
+      }
+    }
+    if (!res) {
+      alert('查无此人！');
+      menu();
+    }
+  }
+
+  // 通过学号修改信息
+  function change() {
+    var num = prompt('请输入需要修改的学号');
+    var res = false;
+    changeOption();
+    // 判断学号是否存在
+    function changeOption() {
+      for (var i = 0; i < information.length; i++) {
+        if (information[i].stuId === num) {
+          var option = +prompt('所选择的学生信息为：\n'+'1.学号:'+ information[i].stuId +'\n2.姓名:'+ information[i].name +'\n3.性别:'+information[i].sex+'\n4.年龄:'+information[i].age+'\n5.班级:'+information[i].class + '\n请输入需要修改的选项(返回主菜单请输入0)');
+          // 选择不同的修改内容
+          switch (option) {
+            case 1:
+              var newId = prompt('原学号是:'+ information[i].stuId +'\n请输入新的学号:');
+              changeId(newId);
+              break;
+            case 2:
+              changeName();
+              break;
+            case 3:
+              changeSex();
+              break;
+            case 4:
+              changeAge();
+              break;
+            case 5:
+              changeClass();
+              break;
+            case 0:
+              menu();
+              break;
+            default:
+              alert('输入数据无效,请重新输入');
+              changeOption();
+              break;
+          }
+          res = true;
+        }
+
+        function changeId (Id){
+          // 先判断学号是否已经存在
+          for (var n = 0; n < information.length; n++) {
+            if (n !== i) {
+              if (newId !== information[n].stuId) {
+                information[i].stuId = Id;
+                alert('修改学号完成，即将返回主菜单!');
+                menu();
+              }else {
+                alert('该学号已经存在，请重新输入！');
+                changeOption();
+              }
+            }
+          }
+        }
+        // 修改学生信息的函数块
+        function changeName (){
+          information[i].name = prompt('原姓名是:'+ information[i].name +'\n请输入新的姓名:');
+          changeComplete();
+        }
+        function changeSex (){
+          information[i].sex = prompt('原性别是:'+ information[i].sex +'\n请输入新的性别:');
+          changeComplete();
+        }
+        function changeAge (){
+          information[i].age = prompt('原年龄是:'+ information[i].age +'\n请输入新的年龄:');
+          changeComplete();
+        }
+        function changeClass (){
+          information[i].class = prompt('原班级是:'+ information[i].class +'\n请输入新的班级:');
+          changeComplete();
+        }
+        function changeComplete (){
+          var nextOption = +prompt('修改完成！\n继续修改该学生请输入1，返回主菜单请输入0');
+          switch (nextOption) {
+            case 1:
+              changeOption();
+              break;
+            case 0:
+              menu();
+              break;
+            default:
+              alert('输入有误，请重新输入');
+              changeComplete();
+              break;
+          }
+        }
+      }
+    }
+    if (!res) {
+      alert('查无此人！');
+      menu();
+    }
+  }
+
+  // 调用主菜单函数
+  menu();
+
+</script>
+</body>
+</html>
